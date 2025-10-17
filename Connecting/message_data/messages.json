@@ -1,0 +1,82 @@
+[
+  {
+    "id": "msg_1",
+    "sender_id": "O001",
+    "recipient_id": "I001",
+    "text": "Hi John! I'm Li Wei from HKUST. I'll be coming to UBC next semester while you'll be at HKUST. I thought it would be great to connect since we're part of the same exchange program!",
+    "timestamp": "2025-10-16T21:04:45.027456",
+    "read": false
+  },
+  {
+    "id": "msg_2",
+    "sender_id": "I001",
+    "recipient_id": "O001",
+    "text": "Hello Li Wei! Great to hear from you. Yes, I'm excited to be going to HKUST while you'll be at my home university UBC. Do you have any tips for living in Hong Kong?",
+    "timestamp": "2025-10-16T21:04:45.027946",
+    "read": false
+  },
+  {
+    "id": "msg_3",
+    "sender_id": "O001",
+    "recipient_id": "I001",
+    "text": "Definitely! Hong Kong has amazing food and efficient public transport. I'd recommend getting an Octopus card as soon as you arrive. Also, the weather is quite humid in summer, so be prepared! I'd love to hear about Vancouver as well since I'll be there.",
+    "timestamp": "2025-10-16T21:04:45.028241",
+    "read": false
+  },
+  {
+    "id": "msg_4",
+    "sender_id": "O002",
+    "recipient_id": "A002",
+    "text": "Hello Ms. Chan, I'm Sarah from HKUST and I'll be going to Oxford next semester. I saw that you're working in London now. Would you have any advice for a student moving to the UK?",
+    "timestamp": "2025-10-16T21:04:45.029680",
+    "read": false
+  },
+  {
+    "id": "msg_5",
+    "sender_id": "A002",
+    "recipient_id": "O002",
+    "text": "Hi Sarah! Great to hear from you. Oxford is a beautiful city. For the UK, I'd recommend opening a bank account as soon as possible and getting a BRP (Biometric Residence Permit). Also, don't forget to register with a GP (doctor) when you arrive. Feel free to reach out if you have specific questions!",
+    "timestamp": "2025-10-16T21:04:45.030635",
+    "read": false
+  },
+  {
+    "id": "msg_6",
+    "sender_id": "O002",
+    "recipient_id": "O005",
+    "text": "Sarah Chen has shared Emily Chan's contact information with you.",
+    "timestamp": "2025-10-16T21:04:45.032029",
+    "read": false
+  },
+  {
+    "id": "msg_7",
+    "sender_id": "O005",
+    "recipient_id": "A002",
+    "text": "Hi Ms. Chan, I'm Michael from HKUST. Sarah shared your contact with me. I'll be going to Stanford next semester, but I'm planning to visit the UK during spring break. Would you have any recommendations for places to visit?",
+    "timestamp": "2025-10-16T21:04:45.032707",
+    "read": false
+  },
+  {
+    "id": "msg_8",
+    "sender_id": "O005",
+    "recipient_id": "O007",
+    "text": "Hi David! I saw that you'll also be in the Bay Area next semester. I'll be at Stanford and you'll be at Berkeley. Maybe we could meet up sometime and explore the area together?",
+    "timestamp": "2025-10-16T21:04:45.033329",
+    "read": false
+  },
+  {
+    "id": "msg_9",
+    "sender_id": "O007",
+    "recipient_id": "O005",
+    "text": "Hey Michael! That sounds great. I've heard the public transport between Stanford and Berkeley isn't the best, but we could meet in San Francisco on weekends. I'm interested in visiting some tech companies too.",
+    "timestamp": "2025-10-16T21:04:45.033720",
+    "read": false
+  },
+  {
+    "id": "msg_10",
+    "sender_id": "O005",
+    "recipient_id": "O007",
+    "text": "Perfect! I'm also interested in visiting tech companies. Let's plan some trips together when we get there. Do you know if there are any other HKUST students going to the Bay Area?",
+    "timestamp": "2025-10-16T21:04:45.033953",
+    "read": false
+  }
+]

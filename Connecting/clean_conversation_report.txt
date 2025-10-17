@@ -1,0 +1,28 @@
+================================================================================
+CONVERSATION BETWEEN Li Wei AND John Smith
+================================================================================
+
+[2025-10-16 21:04:45] Li Wei:
+Hi John! I'm Li Wei from HKUST. I'll be coming to UBC next semester while you'll be at HKUST. I thought it would be great to connect since we're part of the same exchange program!
+
+[2025-10-16 21:04:45] John Smith:
+Hello Li Wei! Great to hear from you. Yes, I'm excited to be going to HKUST while you'll be at my home university UBC. Do you have any tips for living in Hong Kong?
+
+[2025-10-16 21:04:45] Li Wei:
+Definitely! Hong Kong has amazing food and efficient public transport. I'd recommend getting an Octopus card as soon as you arrive. Also, the weather is quite humid in summer, so be prepared! I'd love to hear about Vancouver as well since I'll be there.
+
+================================================================================
+CONTACT INFORMATION
+--------------------------------------------------------------------------------
+
+Li Wei:
+Email: liwei@connect.ust.hk
+Major: Computer Science
+University: University of British Columbia
+
+John Smith:
+Email: johns@ubc.ca
+Major: Computer Science
+University: University of British Columbia
+
+================================================================================

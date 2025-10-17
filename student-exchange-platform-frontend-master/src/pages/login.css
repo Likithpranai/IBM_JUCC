@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+#switch-mode-btn {
+    bottom: 5%;
+    right: 10%;
+    position: fixed;
+}

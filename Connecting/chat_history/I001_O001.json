@@ -1,0 +1,30 @@
+{
+  "chat_id": "I001_O001",
+  "participants": [
+    "I001",
+    "O001"
+  ],
+  "messages": [
+    {
+      "id": "msg_1",
+      "sender_id": "O001",
+      "text": "Hi John! I'm Li Wei from HKUST. I'll be coming to UBC next semester while you'll be at HKUST. I thought it would be great to connect since we're part of the same exchange program!",
+      "timestamp": "2025-10-16T21:24:30.788793",
+      "read": false
+    },
+    {
+      "id": "msg_2",
+      "sender_id": "I001",
+      "text": "Hello Li Wei! Great to hear from you. Yes, I'm excited to be going to HKUST while you'll be at my home university UBC. Do you have any questions about Vancouver or UBC that I could help with?",
+      "timestamp": "2025-10-16T21:24:31.640024",
+      "read": false
+    },
+    {
+      "id": "msg_3",
+      "sender_id": "O001",
+      "text": "Yes, I'd love to know more about housing options near UBC. Are there any student residences you'd recommend? Also, what's the weather like in Vancouver during the winter?",
+      "timestamp": "2025-10-16T21:24:32.401200",
+      "read": false
+    }
+  ]
+}

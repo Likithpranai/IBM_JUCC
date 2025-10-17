@@ -1,0 +1,35 @@
+/* Page Layout Styles */
+
+/* Fix for navigation overlap */
+.profile-page,
+.chatbot-page,
+.matchmaking-page {
+  margin-left: 220px;
+  padding: 1.5rem;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.page-title {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .profile-page,
+  .chatbot-page,
+  .matchmaking-page {
+    margin-left: 0;
+    margin-bottom: 70px; /* Space for bottom navigation */
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+}

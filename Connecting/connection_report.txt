@@ -1,0 +1,58 @@
+================================================================================
+CONNECTION REPORT FOR: Michael Wong (O005)
+Exchange Destination: Stanford University, USA
+Exchange Period: Spring 2026
+================================================================================
+
+1. EXCHANGE PARTNER
+--------------------------------------------------------------------------------
+Name: Jessica Lee
+Email: jessical@stanford.edu
+Home University: Stanford University
+Major: Data Science
+Interests: AI, Volleyball, Travel
+Languages: English, Spanish
+
+Interest Similarity: 0.21
+
+We recommend connecting with your exchange partner before your exchange period begins.
+
+
+2. ALUMNI CONNECTIONS
+--------------------------------------------------------------------------------
+Found 2 alumni connections in your destination.
+
+1. Daniel Lau (Senior Software Engineer at Google)
+   Location: Palo Alto, USA
+   Email: daniellau@alumni.ust.hk
+   Graduated: 2017 with MSc in Computer Science
+   Interests: AI, Startups, Basketball
+   Connection Type: country
+   Interest Similarity: 0.28
+
+2. Dr. Alex Zhang (Research Scientist at MIT)
+   Location: Boston, USA
+   Email: alexzhang@alumni.ust.hk
+   Graduated: 2016 with PhD in Mechanical Engineering
+   Interests: Robotics, Innovation, Cycling
+   Connection Type: country
+   Interest Similarity: 0.25
+
+
+3. PAST EXCHANGE STUDENTS
+--------------------------------------------------------------------------------
+Found 1 past students who went to Stanford University.
+
+1. Brandon Lee (Fall 2023)
+   Email: brandonl@alumni.ust.hk
+   Major: Computer Science
+   Experience Rating: 10/10
+   Can advise on: Silicon Valley Connections, Internships, Academic Excellence
+   Major Similarity: 1.00
+
+================================================================================
+NEXT STEPS:
+1. Reach out to your connections via email
+2. Mention that you were matched through the HKUST Exchange Connection System
+3. Ask specific questions about your exchange destination
+================================================================================

@@ -1,0 +1,26 @@
+================================================================================
+AREA CONNECTION REPORT FOR: Michael Wong (O005)
+Exchange Destination: Stanford University, Palo Alto
+Area: San Francisco Bay Area
+Exchange Period: Spring 2026
+================================================================================
+
+OTHER HKUST STUDENTS IN YOUR AREA
+--------------------------------------------------------------------------------
+Found 1 other HKUST students going to the San Francisco Bay Area area.
+
+1. David Zhang
+   University: UC Berkeley
+   City: Berkeley
+   Major: Computer Science
+   Email: davidz@connect.ust.hk
+   Interests: Programming, Startups, Basketball
+   Languages: English, Mandarin
+   Interest Similarity: 0.24
+
+================================================================================
+NEXT STEPS:
+1. Reach out to students in your area via email
+2. Consider organizing meetups or travel plans together
+3. Share housing information and local tips
+================================================================================
