@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-"""
-API endpoint script for the University Matcher
-"""
 import sys
 import json
 import pandas as pd
@@ -64,7 +60,7 @@ def generate_simulated_rankings(student_data):
     universities = normalized_universities
     print(f"Normalized universities: {universities}", file=sys.stderr)
     
-    # If no universities provided, use some defaults
+
     if not universities:
         universities = [
             'Massachusetts Institute of Technology (MIT)',
@@ -78,17 +74,12 @@ def generate_simulated_rankings(student_data):
     student_gpa = float(student_data.get('GPA', 3.5))
     student_ielts = float(student_data.get('IELTS', 7.0))
     student_extracurriculars = student_data.get('Extra Co-Curriculars', '').count(',') + 1
-    
-    # Generate rankings
     rankings = []
     for i, uni_name in enumerate(universities):
-        # Get university requirements if available
         uni_req = None
         if uni_requirements is not None:
-            # Try exact match first
             uni_req_rows = uni_requirements[uni_requirements['University Name'] == uni_name]
             
-            # If no exact match, try partial match
             if uni_req_rows.empty:
                 for idx, row in uni_requirements.iterrows():
                     if uni_name in row['University Name'] or row['University Name'] in uni_name:
@@ -97,23 +88,19 @@ def generate_simulated_rankings(student_data):
                         break
             else:
                 uni_req = uni_req_rows.iloc[0]
-        
-        # Use real requirements if available, otherwise use defaults
         min_gpa = float(uni_req['Min GPA']) if uni_req is not None else 3.5
         min_ielts = float(uni_req['Min IELTS']) if uni_req is not None else 6.5
         required_extracurriculars = int(uni_req['Required Extracurriculars']) if uni_req is not None else 3
         additional_requirements = uni_req['Additional Requirements'] if uni_req is not None else ''
         
-        # Calculate match factors
         gpa_factor = min(1.0, student_gpa / min_gpa) if min_gpa > 0 else 0.5
         ielts_factor = min(1.0, student_ielts / min_ielts) if min_ielts > 0 else 0.5
         extracurriculars_factor = min(1.0, student_extracurriculars / required_extracurriculars) if required_extracurriculars > 0 else 0.5
-        
-        # Ranking bonus - higher preference universities get a bonus
+    
         ranking_bonus = max(0, 0.3 - (i * 0.03))
         
         # Calculate final score (out of 10)
-        base_score = 7.0  # Start with a higher base score
+        base_score = 7.0 
         
         # Calculate weighted factors
         gpa_weight = 1.5

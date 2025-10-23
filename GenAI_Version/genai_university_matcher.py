@@ -8,23 +8,12 @@ import requests
 
 class GenAIUniversityMatcher:
     def __init__(self, student_data_path, university_requirements_path, api_key=None, api_url=None, project_id=None):
-        """
-        Initialize the GenAI University Matcher with student and university data
-        
-        Args:
-            student_data_path: Path to the CSV file containing student data
-            university_requirements_path: Path to the CSV file containing university requirements
-            api_key: API key for IBM Watson or other GenAI service (optional)
-            api_url: API URL for IBM Watson service (optional)
-            project_id: Project ID for IBM Watson service (optional)
-        """
         self.students_df = pd.read_csv(student_data_path)
         self.universities_df = pd.read_csv(university_requirements_path)
         self.api_key = api_key or os.environ.get("WATSON_API_KEY")
         self.api_url = api_url or os.environ.get("WATSON_API_URL", "https://api.ibm.watsonx.ai/v1")
         self.project_id = project_id or os.environ.get("WATSON_PROJECT_ID")
         
-        # Field weights for traditional scoring (fallback)
         self.field_weights = {
             'gpa': 0.3,
             'ielts': 0.2,
@@ -33,7 +22,6 @@ class GenAIUniversityMatcher:
         }
     
     def parse_extracurriculars(self, extracurriculars_str):
-        """Parse the extracurriculars string into a list of activities"""
         if pd.isna(extracurriculars_str):
             return []
         
@@ -41,14 +29,12 @@ class GenAIUniversityMatcher:
         activities = [a.strip() for a in activities]
         activities = [re.sub(r' -> \(.*$', '', a) for a in activities]
         
-        # Clean up the last item which might have a trailing parenthesis
         if activities and activities[-1].endswith(')'):
             activities[-1] = re.sub(r' -> \(.*\)$', '', activities[-1])
             
         return activities
     
     def parse_credit_transfers(self, credit_transfer_str):
-        """Parse the credit transfer string into a list of course codes"""
         if pd.isna(credit_transfer_str):
             return []
             
@@ -57,32 +43,17 @@ class GenAIUniversityMatcher:
         return courses
     
     def analyze_with_watson(self, student_data, university_data):
-        """
-        Use IBM Watson to analyze the match between student and university
-        
-        Args:
-            student_data: Dictionary containing student information
-            university_data: Dictionary containing university requirements
-            
-        Returns:
-            score: Float between 0 and 1 representing match quality
-            explanation: String with detailed explanation
-        """
         if not self.api_key:
-            # Fallback to traditional scoring if no API key
             return self.calculate_traditional_match(student_data, university_data)
         
         try:
-            # Prepare data for Watson
             prompt = self._create_watson_prompt(student_data, university_data)
             
-            # Call Watson API
             headers = {
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {self.api_key}"
             }
             
-            # IBM Cloud Watson format
             payload = {
                 "model_id": "ibm/foundation-models/watsonx/granite-13b-chat-v2",
                 "input": prompt,
@@ -94,7 +65,6 @@ class GenAIUniversityMatcher:
                 "project_id": self.project_id
             }
             
-            # Make the API call
             response = requests.post(
                 self.api_url,
                 headers=headers,
@@ -103,20 +73,16 @@ class GenAIUniversityMatcher:
             
             if response.status_code == 200:
                 result = response.json()
-                # Parse the result to extract score and explanation
                 return self._parse_watson_response(result)
             else:
                 print(f"Watson API error: {response.status_code} - {response.text}")
-                # Fallback to traditional scoring
                 return self.calculate_traditional_match(student_data, university_data)
                 
         except Exception as e:
             print(f"Error using Watson API: {e}")
-            # Fallback to traditional scoring
             return self.calculate_traditional_match(student_data, university_data)
     
     def _create_watson_prompt(self, student, university):
-        """Create a prompt for Watson to analyze the match"""
         prompt = f"""
         You are a university admissions expert specializing in exchange program matching. Your task is to analyze how well a student matches with university requirements and provide a score from 0-10 and a detailed explanation.
         
@@ -153,9 +119,7 @@ class GenAIUniversityMatcher:
         return prompt
     
     def _parse_watson_response(self, response):
-        """Parse Watson's response to extract score and explanation"""
         try:
-            # Extract the generated text from IBM Watson Cloud format
             generated_text = response.get("results", [{}])[0].get("generated_text", "")
             
             # Find JSON content in the response
@@ -171,12 +135,10 @@ class GenAIUniversityMatcher:
                 
                 return score / 10.0, explanation  # Convert to 0-1 scale
             else:
-                # If no JSON found, try to extract score and explanation from text
                 lines = generated_text.strip().split('\n')
                 score_line = next((line for line in lines if 'score' in line.lower()), None)
                 
                 if score_line:
-                    # Try to extract score (assuming format like "Score: 8/10")
                     import re
                     score_match = re.search(r'\b([0-9]|10)\b', score_line)
                     if score_match:
@@ -185,8 +147,6 @@ class GenAIUniversityMatcher:
                         score = 5.0
                 else:
                     score = 5.0
-                
-                # Use the rest of the text as explanation
                 explanation = generated_text
                 
                 return score / 10.0, explanation
@@ -196,20 +156,7 @@ class GenAIUniversityMatcher:
             return 0.5, "Error in AI analysis. Using default score."
     
     def calculate_traditional_match(self, student, university):
-        """
-        Calculate match score using traditional algorithm (fallback method)
-        
-        Args:
-            student: Dictionary containing student data
-            university: Dictionary containing university requirements
-            
-        Returns:
-            score: Float between 0 and 1 representing match quality
-            explanation: String with explanation
-        """
         explanations = []
-        
-        # GPA comparison
         gpa_score = 0
         student_gpa = float(student['GPA'])
         min_gpa = float(university['Min GPA'])

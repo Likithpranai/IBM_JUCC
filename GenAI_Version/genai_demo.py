@@ -1,11 +1,6 @@
-#!/usr/bin/env python3
-"""
-Demo script for the GenAI-enhanced University Exchange Program Matcher
-"""
 from genai_university_matcher import GenAIUniversityMatcher
 import os
 
-# Try to import config file for API keys
 try:
     import config
     has_config = True
@@ -13,15 +8,12 @@ except ImportError:
     has_config = False
 
 def run_demo():
-    """Run a demonstration of the GenAI university matcher with a sample student"""
     print("=" * 80)
     print("GENAI UNIVERSITY EXCHANGE PROGRAM MATCHER DEMO")
     print("=" * 80)
     
-    # Check for API key from environment variables or config file
     api_key = os.environ.get("WATSON_API_KEY")
     
-    # If not in environment variables, try config file
     if not api_key and has_config and hasattr(config, 'WATSON_API_KEY'):
         api_key = config.WATSON_API_KEY
         print("Using API key from config file")
@@ -31,15 +23,12 @@ def run_demo():
         print("Set the WATSON_API_KEY environment variable or update the config.py file.")
         print("Falling back to traditional scoring algorithm.\n")
     
-    # Initialize the matcher
     print("Initializing GenAI matcher...")
     
-    # Get project ID if available
     project_id = None
     if has_config and hasattr(config, 'WATSON_PROJECT_ID'):
         project_id = config.WATSON_PROJECT_ID
     
-    # Get API URL if available
     api_url = None
     if has_config and hasattr(config, 'WATSON_API_URL'):
         api_url = config.WATSON_API_URL
@@ -52,7 +41,6 @@ def run_demo():
         project_id=project_id
     )
     
-    # Sample student data
     sample_student = {
         'First Name': 'Emma',
         'Last Name': 'Watson',
@@ -74,11 +62,8 @@ def run_demo():
     print(f"Credit Transfer Courses: {sample_student['Credit Transfer Requirement']}")
     print(f"Universities of Interest: {sample_student['Top 10']}")
     
-    # Generate rankings
     print("\nGenerating university rankings using GenAI...")
     rankings = matcher.evaluate_new_student(sample_student)
-    
-    # Display rankings
     print("\nRESULTS:")
     print("-" * 80)
     
