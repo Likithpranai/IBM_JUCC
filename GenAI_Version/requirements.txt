@@ -1,0 +1,6 @@
+pandas
+numpy
+requests
+fuzzywuzzy
+python-dotenv
+python-Levenshtein

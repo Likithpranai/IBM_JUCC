@@ -5,13 +5,14 @@ import json
 import os
 from fuzzywuzzy import fuzz
 import requests
+from dotenv import load_dotenv
 
 class GenAIUniversityMatcher:
     def __init__(self, student_data_path, university_requirements_path, api_key=None, api_url=None, project_id=None):
         self.students_df = pd.read_csv(student_data_path)
         self.universities_df = pd.read_csv(university_requirements_path)
         self.api_key = api_key or os.environ.get("WATSON_API_KEY")
-        self.api_url = api_url or os.environ.get("WATSON_API_URL", "https://api.ibm.watsonx.ai/v1")
+        self.api_url = api_url or os.environ.get("WATSON_API_URL", "https://us-south.ml.cloud.ibm.com")
         self.project_id = project_id or os.environ.get("WATSON_PROJECT_ID")
         
         self.field_weights = {
@@ -324,6 +325,9 @@ class GenAIUniversityMatcher:
 
 def main():
     """Main function to demonstrate the GenAI university matcher"""
+    # Load environment variables from .env.local file
+    load_dotenv('.env.local')
+    
     # Check if API key is available
     api_key = os.environ.get("WATSON_API_KEY")
     if not api_key:
